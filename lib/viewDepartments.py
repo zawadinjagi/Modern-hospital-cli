@@ -1,7 +1,7 @@
 # Import necessary libraries
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from rich.console import Console
 from rich.table import Table
 

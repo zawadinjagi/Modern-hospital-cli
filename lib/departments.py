@@ -1,7 +1,5 @@
-# Import necessary libraries
 from sqlalchemy import create_engine, Column, String, Integer
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, declarative_base
 from rich.console import Console
 from rich.table import Table
 
@@ -52,3 +50,20 @@ def view_departments():
         table.add_row(department.name, department.head_doctor, str(department.num_nurses), str(department.num_doctors))
 
     console.print(table)
+
+# Example usage
+if __name__ == "__main__":
+    while True:
+        console.print("[bold blue]1.[/bold blue] Add Department", style="bold")
+        console.print("[bold blue]2.[/bold blue] View Departments", style="bold")
+        console.print("[bold blue]0.[/bold blue] Go back to Menu", style="bold")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            add_department()
+        elif choice == '2':
+            view_departments()
+        elif choice == '0':
+            break
+        else:
+            console.print("[bold red]Invalid choice. Please try again.[/bold red]")
